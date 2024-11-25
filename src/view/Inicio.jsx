@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import CARSERDCORPORATIONsECCIONS from "../lib/Imagenes en Inicio/CARSERDCORPORATIONsECCIONS.webp";
 import NuestrosProyectosImg1 from "../lib/Imagenes en Inicio/NuestrosProyectosImg1.webp";
 import NuestrosProyectosImg2 from "../lib/Imagenes en Inicio/NuestrosProyectosImg2.webp";
@@ -12,8 +12,52 @@ import NuestrosProyectosImg4 from "../lib/Imagenes en Inicio/NuestrosProyectosIm
 import NuestrosProyectosImg5 from "../lib/Imagenes en Inicio/NuestrosProyectosImg5.webp";
 import NuestrosProyectosImg6 from "../lib/Imagenes en Inicio/NuestrosProyectosImg6.webp";
 import NuestrosProyectosImg7 from "../lib/Imagenes en Inicio/NuestrosProyectosImg7.webp";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
+import InicioImg1 from "../lib/Imagenes en Inicio/InicioImg1.webp";
+import InicioImg2 from "../lib/Imagenes en Inicio/InicioImg2.webp";
+import InicioImg3 from "../lib/Imagenes en Inicio/InicioImg3.webp";
+import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 function Inicio() {
+  const navigate = useNavigate();
+  const [slideIndex, setSlideIndex] = useState(0);
+  const [items, setItems] = useState(4); // Valor inicial para PC
+
+  useEffect(() => {
+    const updateItems = () => {
+      const width = window.innerWidth;
+
+      if (width >= 1024) {
+        setItems(4); // PC
+      } else if (width >= 768) {
+        setItems(3); // Tablet
+      } else {
+        setItems(2); // Celular
+      }
+    };
+
+    // Llama a la función inicialmente
+    updateItems();
+
+    // Agrega el event listener para manejar cambios en el tamaño
+    window.addEventListener("resize", updateItems);
+
+    // Limpia el event listener cuando el componente se desmonta
+    return () => window.removeEventListener("resize", updateItems);
+  }, []);
+  const seccion1 = [
+    {
+      id: 1,
+      img: InicioImg1,
+    },
+    {
+      id: 2,
+      img: InicioImg2,
+    },
+    {
+      id: 3,
+      img: InicioImg3,
+    },
+  ];
   const numeroProyector = [
     {
       id: 1,
@@ -74,6 +118,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 2,
@@ -82,6 +187,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "edward y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 3,
@@ -90,6 +256,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 4,
@@ -98,6 +325,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 5,
@@ -106,6 +394,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 6,
@@ -114,6 +463,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 7,
@@ -122,6 +532,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 8,
@@ -130,6 +601,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 9,
@@ -138,6 +670,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 10,
@@ -146,6 +739,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 11,
@@ -154,6 +808,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 12,
@@ -162,6 +877,67 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
     {
       id: 13,
@@ -170,18 +946,129 @@ function Inicio() {
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
     },
   ];
   return (
     <main>
-      <section>
+      <section className="relative overflow-x-hidden max-w-[100vw] bg-black">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          effect="fade"
+          loop={true} // Permite que el carrusel sea infinito
+          modules={[Autoplay, Pagination, EffectFade]}
+          className="mySwiper"
+          style={{ width: "100vw", height: "100vh" }}
+          onSlideChange={(swiper) => setSlideIndex(swiper.realIndex)} // Actualiza el índice activo
+        >
+          {seccion1.map((seccion1Componets, index) => (
+            <SwiperSlide className="relative" key={seccion1Componets.id}>
+              {/* Imagen */}
+              <motion.img
+                src={seccion1Componets.img}
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{
+                  opacity: slideIndex === index ? 1 : 0,
+                  scale: slideIndex === index ? 1.1 : 1,
+                }}
+                transition={{ duration: 1 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#2AA769] to-transparent opacity-40">
+              </div>
+              <div className="absolute inset-0 flex items-center">
+                <div className="container mx-auto grid grid-cols-3">
+                  <div className="flex flex-col gap-5  col-span-2">
+                    <h1 className="text-white text-6xl font-bold">
+                ¿Deseas <span className="text-[#21985d] text-6xl font-bold">Profesionales</span> para tus servicios empresariales?
+                </h1>
+                <p className="text-white text-2xl">Nosotros te contactamos!</p>
+                  </div>
+                         <div>
+                          </div> 
+                </div>
+        
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </section>
+      <section className="overflow-x-hidden">
         <div className="relative">
-          <h2 className="absolute inset-0 flex items-center justify-center text-white text-2xl lg:text-6xl md:text-4xl  font-bold">
+          <h2 className="w-[100vw] absolute inset-0 flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
             NUESTROS PROYECTOS
           </h2>
           <img
             src={CARSERDCORPORATIONsECCIONS}
-            className="w-[100vw] h-auto"
+            className="max-w-[100vw] min-w-[1300px] min-h-[20vh] h-auto"
             alt=""
           />
         </div>
@@ -207,7 +1094,7 @@ function Inicio() {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={items}
           loop={true}
           speed={1000}
           autoplay={{
@@ -232,7 +1119,7 @@ function Inicio() {
         <Swiper
           modules={[Autoplay]}
           spaceBetween={10}
-          slidesPerView={4}
+          slidesPerView={items}
           loop={true}
           speed={1000}
           autoplay={{
@@ -255,40 +1142,47 @@ function Inicio() {
           ))}
         </Swiper>
       </section>
-      <section className="py-10">
+      <section className="overflow-x-hidden">
         <div className="relative">
-          <h2 className="absolute inset-0 flex items-center justify-center text-white text-2xl lg:text-6xl md:text-4xl  font-bold">
+          <h2 className="w-[100vw] absolute inset-0 flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
             NUESTROS SERVICIOS
           </h2>
           <img
             src={CARSERDCORPORATIONsECCIONS}
-            className="w-[100vw] h-auto"
+            className="max-w-[100vw] min-w-[1300px] min-h-[20vh] h-auto"
             alt=""
           />
         </div>
       </section>
-      <section className="grid  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-[90vw] mx-auto gap-5 py-10">
+      <section className="grid  xl:grid-cols-3 md:grid-cols-2 grid-cols-1 max-w-[90vw] container  mx-auto gap-10 py-10">
         {servicios.map((servicio) => (
           <div
             key={servicio.id}
-            className="flex flex-col items-start w-full text-[#2AA769]  rounded-lg p-4 shadow-lg"
+            className="flex flex-col items-start sm:max-w-[400px] w-full mx-auto bg-[#2AA769] text-white border-white rounded-xl p-3 shadow-lg"
           >
             <img
               src={servicio.img}
-              alt={`Servicio ${servicio.id}`}
-              className="w-full h-[300px] object-cover object-center rounded-md"
+              alt={`Servicio ${servicio.title}`}
+              className="w-full h-[300px] object-cover object-center rounded-lg"
             />
-            <h3 className="text-xl font-bold mt-5">{servicio.title}</h3>
-            <p className="text-base text-zinc-400 line-clamp-2">
+            <h3 className="md:text-2xl text-xl font-bold my-1">
+              {servicio.title}
+            </h3>
+            <p className="text-base text-zinc-50 line-clamp-2 ">
               {servicio.parrafo}
             </p>
 
-            <div className="flex justify-end w-full items-center cursor-pointer gap-2 mt-2">
-                Más informacion
-              <IoIosArrowDroprightCircle
-                size={30}
-                className=" cursor-pointer hover:translate-x-2 transition-all duration-200"
-              />
+            <div
+              onClick={() =>
+                navigate("/servicios", {
+                  state: { servicio: servicio },
+                })
+              }
+              className="flex justify-end w-full items-center cursor-pointer gap-2 mt-2"
+            >
+              <div className="bg-white rounded-s-md rounded-tr-md rounded-br-2xl pr-1 pb-1 cursor-pointer hover:translate-x-1 transition-all duration-200">
+                <IoIosArrowForward size={35} className="text-[#2AA769]" />
+              </div>
             </div>
           </div>
         ))}

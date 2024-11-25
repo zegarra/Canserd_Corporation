@@ -7,6 +7,7 @@ import Productos from './view/Productos'
 import NavBar from './NavBar/NavBar'
 import QuienesSomos from './view/QuienesSomos'
 import Contactenos from './view/Contactenos'
+import Servicios from './view/servicios/Servicios'
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/Productos" element={<Productos />} />
       <Route path='/Quienes somos' element={<QuienesSomos/>}/>
       <Route path='/Contactenos' element={<Contactenos />}/>
+      <Route path='/servicios' element={<Servicios />}/>
     </Routes>
   </HashRouter>
   )
