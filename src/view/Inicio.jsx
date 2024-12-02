@@ -1,4 +1,4 @@
-import  { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
@@ -22,6 +22,7 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { FaStar } from "react-icons/fa";
 import { AiOutlineLike } from "react-icons/ai";
 import { ImHammer } from "react-icons/im";
+import Email from "./EnvioDeEmail/Email";
 
 function Inicio() {
   const navigate = useNavigate();
@@ -1020,29 +1021,31 @@ function Inicio() {
       id: 1,
       title: "Compromiso",
       icon: <IoShieldCheckmarkSharp className="text-white text-4xl" />,
-      parrafo: "Compromiso con la seguridad y el cumplimiento de normativas vigentes."
+      parrafo:
+        "Compromiso con la seguridad y el cumplimiento de normativas vigentes.",
     },
     {
       id: 2,
       title: "Excelente servicio",
       icon: <FaStar className="text-white text-4xl" />,
-      parrafo: "Atención personalizada y adaptada a tus necesidades."
+      parrafo: "Atención personalizada y adaptada a tus necesidades.",
     },
     {
       id: 3,
       title: "Experiencia",
       icon: <AiOutlineLike className="text-white text-4xl" />,
-      parrafo: "Más de 15 años de experiencia en el mercado peruano."
+      parrafo: "Más de 15 años de experiencia en el mercado peruano.",
     },
     {
       id: 4,
       title: "Eficiencia",
       icon: <ImHammer className="text-white text-4xl" />,
-      parrafo: "Soluciones rápidas y eficientes para cualquier tipo de proyecto."
-    }
+      parrafo:
+        "Soluciones rápidas y eficientes para cualquier tipo de proyecto.",
+    },
   ];
   return (
-    <main >
+    <main>
       <section className="relative overflow-x-hidden max-w-[100vw] bg-black">
         <Swiper
           spaceBetween={30}
@@ -1074,20 +1077,28 @@ function Inicio() {
                 }}
                 transition={{ duration: 1 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#2AA769] to-transparent opacity-40">
-              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#000000] to-transparent opacity-60"></div>
               <div className="absolute inset-0 flex items-center">
-                <div className="container mx-auto grid grid-cols-3">
-                  <div className="flex flex-col gap-5  col-span-2">
-                    <h1 className="text-white text-6xl font-bold">
-                ¿Deseas <span className="text-[#21985d] text-6xl font-bold">Profesionales</span> para tus servicios empresariales?
-                </h1>
-                <p className="text-white text-2xl">Nosotros te contactamos!</p>
+                <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                  {/* Texto principal */}
+                  <div className="flex flex-col gap-5 md:col-span-2 text-center md:text-left">
+                    <h1 className="text-white text-4xl md:text-6xl font-bold">
+                      ¿Deseas{" "}
+                      <span className="text-[#21985d] text-4xl md:text-6xl font-bold">
+                        Profesionales
+                      </span>{" "}
+                      para tus servicios empresariales?
+                    </h1>
+                    <p className="text-white text-xl md:text-2xl">
+                      ¡Nosotros te contactamos!
+                    </p>
                   </div>
-                         <div>
-                          </div> 
+
+                  {/* Formulario */}
+                  <div className="col-span-1 flex justify-center">
+                    <Email />
+                  </div>
                 </div>
-        
               </div>
             </SwiperSlide>
           ))}
@@ -1222,7 +1233,7 @@ function Inicio() {
       <section className="overflow-x-hidden ">
         <div className="relative">
           <h2 className="w-[90vw] mx-auto absolute inset-0 uppercase flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
-          razones para elegirnos
+            razones para elegirnos
           </h2>
           <img
             src={CARSERDCORPORATIONsECCIONS}
@@ -1232,28 +1243,30 @@ function Inicio() {
         </div>
       </section>
       <section>
-      <div className="grid grid-cols-1 md:grid-cols-2 py-20 lg:grid-cols-4 gap-6 w-[90%] mx-auto">
-      {boxIcon.map((box) => (
-        <div
-          key={box.id}
-          className="cursor-pointer bg-green-600 text-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
-        >
-          <div className="mb-4">{box.icon}</div>
-          <h3 className="font-bold text-lg mb-2">{box.title}</h3>
-          <p className="text-sm">{box.parrafo}</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 py-20 lg:grid-cols-4 gap-6 w-[90%] mx-auto">
+          {boxIcon.map((box) => (
+            <div
+              key={box.id}
+              className="cursor-pointer bg-green-600 text-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
+            >
+              <div className="mb-4">{box.icon}</div>
+              <h3 className="font-bold text-lg mb-2">{box.title}</h3>
+              <p className="text-sm">{box.parrafo}</p>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
       </section>
       <section className="overflow-x-hidden ">
         <div className="relative ">
           <div className=" px-4 gap-2 absolute  inset-0 uppercase flex flex-col text-start justify-center text-white  lg:text-6xl text-4xl container mx-auto font-light">
-          <span className="font-bold">Brindamos el mejor </span> 
-          servicio técnico
-          <div>
-           <button className="bg-[#068a38] text-lg font-bold hover:bg-green-500 py-2 px-4 flex items-center transition-all duration-200 rounded-md ">cotiza con nosotros</button>
+            <span className="font-bold">Brindamos el mejor </span>
+            servicio técnico
+            <div>
+              <button className="bg-[#068a38] text-lg font-bold hover:bg-green-500 py-2 px-4 flex items-center transition-all duration-200 rounded-md ">
+                cotiza con nosotros
+              </button>
+            </div>
           </div>
-                </div>
           <img
             src={CARSERDCORPORATIONsECCIONS}
             className="max-w-[100vw] min-w-[1300px] min-h-[30vh] h-auto"
@@ -1261,7 +1274,7 @@ function Inicio() {
           />
         </div>
       </section>
-      <Map/>
+      <Map />
     </main>
   );
 }

@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Servicios_Generales_Especializados_con_mas_de_15_años from "../lib/Imagenes en Inicio/Servicios_Generales_Especializados_con_mas_de_15_años.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { Accordionpc } from "./Accordionpc";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-function NavBar() {
-const navigate=useNavigate()
-  const NavBarMenu = [
+import { GiHamburgerMenu } from "react-icons/gi"; // Importamos el ícono de hamburguesa
 
+function NavBar() {
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para controlar el menú
+
+  const NavBarMenu = [
     {
       id: 1,
       titulo: "SERVICIOS",
       submenu: [
         {
-          titulo: "Trabajo de estructura métalicas",
+          titulo: "Trabajo de estructura metálicas",
           Link: "/mantenimientoPreventivo",
         },
         {
@@ -23,10 +26,10 @@ const navigate=useNavigate()
           titulo: "Revestimiento",
           Link: "/reparacionMotores",
         },
-        { titulo: "Colocación e instalcaion de aberturas", Link: "/planchadoPintura" },
+        { titulo: "Colocación e instalación de aberturas", Link: "/planchadoPintura" },
       ],
     },
-        {
+    {
       id: 2,
       titulo: "Proyectos",
       Link: "/Proyectos",
@@ -47,41 +50,46 @@ const navigate=useNavigate()
       Link: "/Contactenos",
     },
   ];
+
   const redes = [
     {
       id: 1,
       nombre: "Facebook",
-      icono: <FaFacebook className="text-[#2AA769]" size={24} />,
+      icono: <FaFacebook className="text-[#2AA769]" />,
     },
     {
       id: 2,
       nombre: "LinkedIn",
-      icono: <FaLinkedin className="text-[#2AA769]" size={24} />,
+      icono: <FaLinkedin className="text-[#2AA769]" />,
     },
     {
       id: 3,
       nombre: "Whatsapp",
-      icono: <FaWhatsapp className="text-[#2AA769]" size={24} />,
+      icono: <FaWhatsapp className="text-[#2AA769]" />,
     },
   ];
+
   return (
     <nav className="grid">
-      <div className="bg-[#738585] py-4">
+      <div className="bg-[#2AA769] py-4">
         <div className="w-[90vw] mx-auto">
-          <span className=" text-white">
-            Servicios Generales Especializados con mas de 15 años{" "}
+          <span className="text-white">
+            Servicios Generales Especializados con más de 15 años
           </span>
         </div>
       </div>
 
       <div className="flex justify-between items-center w-[90vw] mx-auto">
         <img
-          className="w-64"
-          onClick={()=>navigate('/')}
+          className="w-32 md:w-40 cursor-pointer"
+          onClick={() => navigate("/")}
           src={Servicios_Generales_Especializados_con_mas_de_15_años}
-          alt="Servicios Generales Especializados con mas de 15 años"
+          alt="Servicios Generales Especializados con más de 15 años"
         />
-        <ul className="hidden gap-4 lg:flex">
+           <div className="lg:hidden" onClick={() => setMenuOpen(!menuOpen)}>
+          <GiHamburgerMenu className="text-zinc-900 text-3xl cursor-pointer " />
+        </div>
+        <ul className={`hidden lg:flex gap-4`}>
           {NavBarMenu.map((menu) => (
             <li
               key={menu.id}
@@ -106,14 +114,21 @@ const navigate=useNavigate()
             </li>
           ))}
         </ul>
-        <ul className="flex">
-      {redes.map((res) => (
-        <li key={res.id} title={res.nombre} className="cursor-pointer scale-100 hover:scale-105 transition-all duration-200 p-2">
-          {res.icono}
-        </li>
-      ))}
-    </ul>
+
+        {/* Redes sociales */}
+        <ul className="hidden lg:flex">
+          {redes.map((res) => (
+            <li
+              key={res.id}
+              title={res.nombre}
+              className="cursor-pointer scale-100 hover:scale-105 transition-all duration-200 p-2 text-xl md:text-2xl"
+            >
+              {res.icono}
+            </li>
+          ))}
+        </ul>
       </div>
+
     </nav>
   );
 }
