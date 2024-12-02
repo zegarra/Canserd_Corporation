@@ -10,17 +10,57 @@ function Email() {
     phoneNumber: "",
   });
 
+  const [errors, setErrors] = useState({
+    companyRuc: "",
+    phoneNumber: "",
+  });
+
   const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "companyRuc") {
+      if (!/^\d*$/.test(value)) {
+        setErrors({ ...errors, companyRuc: "Solo se permiten números." });
+        return;
+      }
+      if (value.length > 11) {
+        setErrors({ ...errors, companyRuc: "El RUC debe tener exactamente 11 dígitos." });
+        return;
+      }
+      setErrors({ ...errors, companyRuc: "" });
+    }
+
+    if (name === "phoneNumber") {
+      if (!/^\d*$/.test(value)) {
+        setErrors({ ...errors, phoneNumber: "Solo se permiten números." });
+        return;
+      }
+      if (value.length > 9) {
+        setErrors({ ...errors, phoneNumber: "El número debe tener exactamente 9 dígitos." });
+        return;
+      }
+      setErrors({ ...errors, phoneNumber: "" });
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
     });
+  };
+
+  const handleBlur = (name) => {
+    if (name === "companyRuc" && formData.companyRuc.length !== 11) {
+      setErrors({ ...errors, companyRuc: "El RUC debe tener exactamente 11 dígitos." });
+    } else if (name === "phoneNumber" && formData.phoneNumber.length !== 9) {
+      setErrors({ ...errors, phoneNumber: "El número debe tener exactamente 9 dígitos." });
+    } else {
+      setErrors({ ...errors, [name]: "" });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validación básica
     if (
       !formData.selectedCountry ||
       !formData.fullName ||
@@ -32,7 +72,6 @@ function Email() {
       return;
     }
 
-    // Configuración de EmailJS
     const serviceID = "service_i5h9zeq";
     const templateID = "template_9622u2h";
     const publicKey = "FiOIebaYfaTGEnXXt";
@@ -50,9 +89,8 @@ function Email() {
         },
         publicKey
       )
-      .then((response) => {
+      .then(() => {
         alert("¡Correo enviado exitosamente!");
-        console.log("Éxito:", response.status, response.text);
         setFormData({
           selectedCountry: "",
           fullName: "",
@@ -61,9 +99,8 @@ function Email() {
           phoneNumber: "",
         });
       })
-      .catch((error) => {
+      .catch(() => {
         alert("Hubo un problema al enviar el correo. Revisa los datos.");
-        console.error("Error:", error);
       });
   };
 
@@ -154,8 +191,13 @@ function Email() {
             id="companyRuc"
             value={formData.companyRuc}
             onChange={handleChange}
+            onBlur={() => handleBlur("companyRuc")}
             className="bg-gray-50 border focus:outline-none border-gray-400 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            maxLength={11}
           />
+          {errors.companyRuc && (
+            <p className="text-red-600 text-sm mt-1">{errors.companyRuc}</p>
+          )}
         </div>
         <div className="col-span-4 sm:col-span-2">
           <label
@@ -170,8 +212,13 @@ function Email() {
             id="phoneNumber"
             value={formData.phoneNumber}
             onChange={handleChange}
+            onBlur={() => handleBlur("phoneNumber")}
             className="bg-gray-50 border focus:outline-none border-gray-400 text-gray-900 text-sm rounded-lg block w-full p-2.5"
+            maxLength={9}
           />
+          {errors.phoneNumber && (
+            <p className="text-red-600 text-sm mt-1">{errors.phoneNumber}</p>
+          )}
         </div>
         <div className="col-span-4 flex justify-end">
           <button

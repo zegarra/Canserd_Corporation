@@ -123,7 +123,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Servicio de gasfiteria",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, somos expertos en gasfitería, ofreciendo soluciones rápidas y efectivas para todas tus necesidades de instalación y reparación de sistemas de agua y desagüe. Contamos con un equipo especializado que garantiza calidad y durabilidad en cada trabajo.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -192,7 +192,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Trabajo sanitario",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, somos especialistas en trabajos sanitarios, ofreciendo soluciones rápidas y duraderas para la instalación de tuberías de agua y desagüe en proyectos residenciales, comerciales e industriales. Nuestro enfoque es garantizar la correcta distribución y evacuación de agua con un servicio eficiente y de alta calidad.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -261,7 +261,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Puertas enrollables",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, somos expertos en la instalación de puertas enrollables de alta resistencia, diseñadas para proporcionar seguridad, durabilidad y facilidad de uso en entornos comerciales, industriales y residenciales. Nuestro equipo de especialistas utiliza materiales de primera calidad y tecnología avanzada para garantizar un funcionamiento óptimo en cada instalación.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -330,8 +330,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Trabajos de obras civiles",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
-      url: "/Gasfiteria",
+        "En Carserd, somos especialistas en obras civiles de alta calidad, garantizando la seguridad, precisión y durabilidad en cada uno de nuestros proyectos. Ofrecemos un servicio integral adaptado a las necesidades de construcciones residenciales, comerciales e industriales.",
       contenido: {
         seccion1: {
           text: "Estructuras Metálicas de Alta Calidad y Precisión",
@@ -399,7 +398,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Sistema constructivo en Drywall",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, somos expertos en la instalación y mantenimiento de drywall, ofreciendo soluciones innovadoras para divisiones y ampliaciones de espacios. Nuestro compromiso es brindar un servicio de alta calidad que se adapte a tus necesidades y supere tus expectativas.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -468,7 +467,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Servicios de Carpintería",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, ofrecemos un servicio integral de carpintería que transforma tus ideas en realidad. Con una amplia experiencia en la fabricación de muebles y soluciones personalizadas, nos dedicamos a crear piezas únicas que reflejan tu estilo y necesidades específicas.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -537,7 +536,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Estructuras metálicas",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -606,7 +605,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Instalaciones Eléctricas",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, somos especialistas en instalaciones eléctricas sanitarias, ofreciendo soluciones integrales para garantizar un funcionamiento seguro, eficiente y moderno en todos tus sistemas eléctricos. Contamos con un equipo capacitado que trabaja con los más altos estándares de calidad para brindar resultados duraderos y confiables.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -744,7 +743,7 @@ function Inicio() {
       img: NuestrosProyectosImg1,
       title: "Mantenimiento de Vidrios",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, ofrecemos una amplia gama de servicios de vidrio que transforman tus espacios con elegancia y funcionalidad. Nuestra experiencia y dedicación nos permiten brindar soluciones a medida que se adaptan perfectamente a tus necesidades y estilo.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -811,7 +810,7 @@ function Inicio() {
     {
       id: 11,
       img: NuestrosProyectosImg1,
-      title: "Trabajo de Pintura",
+      title: "Trabajos de Melamine",
       parrafo:
         "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
       url: "/Gasfiteria",
@@ -949,9 +948,147 @@ function Inicio() {
     {
       id: 13,
       img: NuestrosProyectosImg1,
-      title: "Puertas de Emergencia",
+      title: "Instalación de aperturas",
       parrafo:
-        "Ofrecemos soluciones integrales en gasfitería, diseñadas para satisfacer tus necesidades de mantenimiento, reparación e instalación de sistemas de agua y desagüe. Nuestro equipo de expertos asegura un trabajo eficiente y de alta calidad, abordando desde pequeñas reparaciones de tuberías hasta la instalación de sistemas completos. Garantizamos un servicio rápido, confiable y adaptado a las especificaciones de tu hogar o negocio, priorizando siempre tu comodidad y tranquilidad. ¡Confía en nosotros para mantener tus instalaciones en perfectas condiciones!",
+        "En Carserd, ofrecemos un servicio profesional de colocación e instalación de aperturas, garantizando que cada detalle de tus espacios cuente con acabados precisos y duraderos. Ya sea para renovar o instalar nuevas puertas, ventanas o mamparas, nuestro equipo de expertos está listo para brindarte soluciones personalizadas que se adapten a tus necesidades y estilo.",
+      url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Expertos en Colocación e Instalación de Aperturas: Seguridad y Estilo para tu Hogar o Negocio",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
+    },
+    {
+      id: 14,
+      img: NuestrosProyectosImg1,
+      title: "Revestimiento",
+      parrafo:
+        "En Carserd, ofrecemos servicios de revestimiento sanitario con acabados impecables, diseñados para mejorar la estética y funcionalidad de tus espacios. Contamos con un equipo altamente capacitado que garantiza precisión y durabilidad en cada proyecto.",
+      url: "/Gasfiteria",
+      contenido: {
+        seccion1: {
+          text: "Estructuras Metálicas de Alta Calidad y Precisión",
+          parrafo:
+            "¿Buscas expertos en soldadura y estructuras metálicas para tus proyectos? En Carserd, ofrecemos soluciones completas y seguras para todo tipo de instalaciones metálicas.",
+        },
+        seccion2: [
+          {
+            id: 1,
+            title: "Soldadura de precisión",
+            parrafo:
+              "Garantizamos un trabajo sólido y duradero en diferentes tipos de estructuras.",
+          },
+          {
+            id: 2,
+            title: "Techos de estructuras metálicas",
+            parrafo:
+              "Diseñamos e instalamos techos robustos y resistentes, adaptados a las necesidades de cada proyecto.",
+          },
+          {
+            id: 3,
+            title: "Instalación de coberturas metálicas",
+            parrafo:
+              "Protege tus espacios con coberturas metálicas resistentes al clima y con larga vida útil.",
+          },
+          {
+            id: 4,
+            title: "Trabajo de soldadura en altura",
+            parrafo:
+              "Expertos en trabajos de altura, aseguramos la máxima seguridad y calidad en cada soldadura.",
+          },
+          {
+            id: 5,
+            title: "Soportes metálicos para techos",
+            parrafo:
+              "Instalamos soportes metálicos de alta resistencia, brindando estabilidad y seguridad para tus techos.",
+          },
+        ],
+        seccion3: [
+          {
+            id: 1,
+            img: NuestrosProyectosImg1,
+          },
+          {
+            id: 2,
+            img: NuestrosProyectosImg2,
+          },
+          {
+            id: 3,
+            img: NuestrosProyectosImg3,
+          },
+          {
+            id: 4,
+            img: NuestrosProyectosImg4,
+          },
+          {
+            id: 5,
+            img: NuestrosProyectosImg5,
+          },
+        ],
+      },
+    },
+    {
+      id: 15,
+      img: NuestrosProyectosImg1,
+      title: "Puertas de madera",
+      parrafo:
+        "En Carserd, somos especialistas en la fabricación e instalación de puertas de madera, ofreciendo una amplia gama de soluciones tanto manuales como automáticas, para satisfacer las necesidades de tu hogar, oficina o negocio. Nuestras puertas combinan diseño, resistencia y funcionalidad, asegurando la mejor protección y estética.",
       url: "/Gasfiteria",
       contenido: {
         seccion1: {
@@ -1020,26 +1157,26 @@ function Inicio() {
     {
       id: 1,
       title: "Compromiso",
-      icon: <IoShieldCheckmarkSharp className="text-white text-4xl" />,
+      icon: <IoShieldCheckmarkSharp className="text-white text-6xl" />,
       parrafo:
         "Compromiso con la seguridad y el cumplimiento de normativas vigentes.",
     },
     {
       id: 2,
       title: "Excelente servicio",
-      icon: <FaStar className="text-white text-4xl" />,
+      icon: <FaStar className="text-white text-6xl" />,
       parrafo: "Atención personalizada y adaptada a tus necesidades.",
     },
     {
       id: 3,
       title: "Experiencia",
-      icon: <AiOutlineLike className="text-white text-4xl" />,
+      icon: <AiOutlineLike className="text-white text-6xl" />,
       parrafo: "Más de 15 años de experiencia en el mercado peruano.",
     },
     {
       id: 4,
       title: "Eficiencia",
-      icon: <ImHammer className="text-white text-4xl" />,
+      icon: <ImHammer className="text-white text-6xl" />,
       parrafo:
         "Soluciones rápidas y eficientes para cualquier tipo de proyecto.",
     },
@@ -1247,7 +1384,7 @@ function Inicio() {
           {boxIcon.map((box) => (
             <div
               key={box.id}
-              className="cursor-pointer bg-green-600 text-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
+              className="cursor-pointer bg-[#2ca869] text-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
             >
               <div className="mb-4">{box.icon}</div>
               <h3 className="font-bold text-lg mb-2">{box.title}</h3>

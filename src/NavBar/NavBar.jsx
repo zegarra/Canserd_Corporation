@@ -26,7 +26,49 @@ function NavBar() {
           titulo: "Revestimiento",
           Link: "/reparacionMotores",
         },
-        { titulo: "Colocación e instalación de aberturas", Link: "/planchadoPintura" },
+        {
+          titulo: "Colocación e instalación de aberturas",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Puertas de madera",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Drywall",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Trabajo de melamina",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Trabajos de obras civiles",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Trabajos sanitarios",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Electricidad",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Puertas enrollables",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Carpinteria",
+          Link: "/reparacionMotores",
+        },
+        {
+          titulo: "Vidrios",
+          Link: "/reparacionMotores",
+        },
+        { titulo: "Reparaciones de equipos de frio", 
+          Link: "/planchadoPintura" 
+        },
       ],
     },
     {
