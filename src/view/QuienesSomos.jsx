@@ -46,7 +46,7 @@ function QuienesSomos() {
         </p>
       </div>
       <div className="relative mb-20">
-        <h1 className="uppercase w-[90vw] mx-auto absolute inset-0 flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
+        <h1 className="uppercase  container px-4 mx-auto absolute inset-0 flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
           ¿QUIÉNES SOMOS?
         </h1>
         <img
@@ -55,7 +55,7 @@ function QuienesSomos() {
           alt=""
         />
       </div>
-      <section className="grid grid-cols-2 gap-5 w-[90vw] mx-auto pb-10 md:pb-20 items-center">
+      <section className="grid grid-cols-2 gap-5  container px-4 mx-auto pb-10 md:pb-20 items-center">
         <div className="grid gap-4 col-span-2 md:col-span-1">
           <h2 className="uppercase text-xl font-bold md:text-3xl">
             CArserd corporation
@@ -105,7 +105,7 @@ function QuienesSomos() {
         {metodologia.map((metodo, index) => (
           <div
             key={index}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5 w-[90vw] mx-auto pb-10 md:pb-20"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5  container px-4 mx-auto pb-10 md:pb-20"
           >
             <div
               className={`flex flex-col justify-center gap-2 ${
