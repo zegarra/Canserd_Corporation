@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
 import "swiper/css";
@@ -17,6 +17,12 @@ import InicioImg2 from "../lib/Imagenes en Inicio/InicioImg2.webp";
 import InicioImg3 from "../lib/Imagenes en Inicio/InicioImg3.webp";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import Map from "./EnvioDeEmail/Map";
+import { IoShieldCheckmarkSharp } from "react-icons/io5";
+import { FaStar } from "react-icons/fa";
+import { AiOutlineLike } from "react-icons/ai";
+import { ImHammer } from "react-icons/im";
+
 function Inicio() {
   const navigate = useNavigate();
   const [slideIndex, setSlideIndex] = useState(0);
@@ -1009,8 +1015,34 @@ function Inicio() {
       },
     },
   ];
+  const boxIcon = [
+    {
+      id: 1,
+      title: "Compromiso",
+      icon: <IoShieldCheckmarkSharp className="text-white text-4xl" />,
+      parrafo: "Compromiso con la seguridad y el cumplimiento de normativas vigentes."
+    },
+    {
+      id: 2,
+      title: "Excelente servicio",
+      icon: <FaStar className="text-white text-4xl" />,
+      parrafo: "Atención personalizada y adaptada a tus necesidades."
+    },
+    {
+      id: 3,
+      title: "Experiencia",
+      icon: <AiOutlineLike className="text-white text-4xl" />,
+      parrafo: "Más de 15 años de experiencia en el mercado peruano."
+    },
+    {
+      id: 4,
+      title: "Eficiencia",
+      icon: <ImHammer className="text-white text-4xl" />,
+      parrafo: "Soluciones rápidas y eficientes para cualquier tipo de proyecto."
+    }
+  ];
   return (
-    <main>
+    <main >
       <section className="relative overflow-x-hidden max-w-[100vw] bg-black">
         <Swiper
           spaceBetween={30}
@@ -1187,6 +1219,49 @@ function Inicio() {
           </div>
         ))}
       </section>
+      <section className="overflow-x-hidden ">
+        <div className="relative">
+          <h2 className="w-[90vw] mx-auto absolute inset-0 uppercase flex items-center justify-center text-white  lg:text-6xl text-4xl text-center  font-bold">
+          razones para elegirnos
+          </h2>
+          <img
+            src={CARSERDCORPORATIONsECCIONS}
+            className="max-w-[100vw] min-w-[1300px] min-h-[20vh] h-auto"
+            alt=""
+          />
+        </div>
+      </section>
+      <section>
+      <div className="grid grid-cols-1 md:grid-cols-2 py-20 lg:grid-cols-4 gap-6 w-[90%] mx-auto">
+      {boxIcon.map((box) => (
+        <div
+          key={box.id}
+          className="cursor-pointer bg-green-600 text-white p-6 rounded-lg shadow-lg flex flex-col items-center justify-center text-center hover:scale-105 transition-transform duration-300"
+        >
+          <div className="mb-4">{box.icon}</div>
+          <h3 className="font-bold text-lg mb-2">{box.title}</h3>
+          <p className="text-sm">{box.parrafo}</p>
+        </div>
+      ))}
+    </div>
+      </section>
+      <section className="overflow-x-hidden ">
+        <div className="relative ">
+          <div className=" px-4 gap-2 absolute  inset-0 uppercase flex flex-col text-start justify-center text-white  lg:text-6xl text-4xl container mx-auto font-light">
+          <span className="font-bold">Brindamos el mejor </span> 
+          servicio técnico
+          <div>
+           <button className="bg-[#068a38] text-lg font-bold hover:bg-green-500 py-2 px-4 flex items-center transition-all duration-200 rounded-md ">cotiza con nosotros</button>
+          </div>
+                </div>
+          <img
+            src={CARSERDCORPORATIONsECCIONS}
+            className="max-w-[100vw] min-w-[1300px] min-h-[30vh] h-auto"
+            alt=""
+          />
+        </div>
+      </section>
+      <Map/>
     </main>
   );
 }

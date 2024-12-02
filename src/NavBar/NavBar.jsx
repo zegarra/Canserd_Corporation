@@ -29,17 +29,17 @@ const navigate=useNavigate()
         {
       id: 2,
       titulo: "Proyectos",
-      Link: "/",
+      Link: "/Proyectos",
     },
     {
       id: 3,
       titulo: "PRODUCTOS",
-      Link: "/nosotros",
+      Link: "/Productos",
     },
     {
       id: 4,
       titulo: "Quiénes somos",
-      Link: "/contacto",
+      Link: "/Quienessomos",
     },
     {
       id: 5,

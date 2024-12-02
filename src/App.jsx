@@ -8,11 +8,10 @@ import NavBar from './NavBar/NavBar'
 import QuienesSomos from './view/QuienesSomos'
 import Contactenos from './view/Contactenos'
 import Servicios from './view/servicios/Servicios'
+import Footer from './footer/Footer'
 
 
 function App() {
-
-
   return (
     <HashRouter>
       <NavBar/>
@@ -20,10 +19,11 @@ function App() {
       <Route path="/" element={<Inicio />} />
       <Route path="/Proyectos" element={<Proyectos />} />
       <Route path="/Productos" element={<Productos />} />
-      <Route path='/Quienes somos' element={<QuienesSomos/>}/>
+      <Route path='/Quienessomos' element={<QuienesSomos/>}/>
       <Route path='/Contactenos' element={<Contactenos />}/>
       <Route path='/servicios' element={<Servicios />}/>
     </Routes>
+    <Footer/>
   </HashRouter>
   )
 }
